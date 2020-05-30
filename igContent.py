@@ -14,7 +14,7 @@ ex. Avg Likes = 120 likes
 	Viral Score = 1 - (120 / 300) =  66.66 %
 
 - Posts can be found from their post id with www.instagram.com/p/[POST ID]
-- Test accounts to make sure its working properly, copy and paste (without quotes):
+- Test case accounts to make sure its working properly, copy and paste (without quotes):
  "433 espn nba nfl bleacherreport houseofhighlights lakers celtics"
 
 """
@@ -98,11 +98,10 @@ pages_to_analyze = input("Type usernames separated by a space to analyze for vir
 pageslist = pages_to_analyze.split(" ")
 viralPostData = [["a", 0], ["b", 0], ["c", 0], ["d", 0], ["e", 0], ["f", 0], ["g", 0], ["h", 0], ["i", 0]] # empty list to start with
 for user in pageslist:
-	print(user)
 	viralPostData = find_posts(user, viralPostData, time_imported)
+	print("\n" + user + " finished analyzing.")
 for item in viralPostData:
 	if item[1] != 0:
-		print("Post: www.instagram.com/p/" + item[0] + " Score: " + str(item[1] * 100) + "\n")
-
+		print("\n" + "Post: www.instagram.com/p/" + item[0] + " Score: " + str(item[1] * 100))
 
 
